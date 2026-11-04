@@ -4,6 +4,7 @@
 
 soong_namespace {
     imports: [
+        "hardware/samsung",
         "device/samsung/exynos9820-common",
         "hardware/samsung_slsi-linaro/exynos",
         "hardware/samsung_slsi-linaro/graphics",
@@ -106,34 +107,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libspatializerparamstorage",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libspatializerparamstorage.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libutils",
-                "libprofileparamstorage",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
     prefer: true,
     soc_specific: true,
 }
